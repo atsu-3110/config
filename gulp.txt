@@ -1,0 +1,116 @@
+1. Node.js が入ってるか確認
+node -v
+npm -v
+
+    nvmでNodeを管理
+    1-1. nvm を入れる
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    source ~/.zshrc
+    確認
+    nvm -v
+
+    1-2. 最新LTSのNodeを入れる
+    nvm install --lts
+    nvm use --lts
+
+    確認
+    nvm -v
+
+    1-3. 古いNodeが残っているか確認
+    which node
+
+    1-4 デフォルトを固定
+    nvm alias default lts/*
+
+2. プロジェクトに Gulp 導入
+    2-1. 正しい場所へ移動
+    2-2. Gulp初期化スタート
+    npm init -y
+    npm install --save-dev gulp
+
+2-3. プラグインの導入
+    npm install --save-dev \
+    gulp gulp-sass sass \
+    gulp-postcss autoprefixer cssnano \
+    gulp-sourcemaps gulp-rename \
+    gulp-concat gulp-uglify \
+    browser-sync
+
+    プラグインの確認
+    cat package.json
+
+    "devDependencies": { ... }の中身を確認
+
+2-4. gulpfile.js があるか確認
+ls gulpfile.js
+
+    出ない
+    2-4-1. gulpfile.js を作る
+    touch gulpfile.js
+
+    2-4-2. gulpfile.js の中身を作る
+    gulpfile.js の中身
+        const { src, dest, watch, series, parallel } = require("gulp");
+        const sass = require("gulp-sass")(require("sass"));
+        const postcss = require("gulp-postcss");
+        const autoprefixer = require("autoprefixer");
+        const cssnano = require("cssnano");
+        const sourcemaps = require("gulp-sourcemaps");
+        const rename = require("gulp-rename");
+        const concat = require("gulp-concat");
+        const uglify = require("gulp-uglify");
+        const browserSync = require("browser-sync").create();
+
+        // パス（今の構成に合わせて）
+        const paths = {
+          scss: "scss/**/*.scss",
+          js: "js/**/*.js",
+          cssOut: "css",
+          jsOut: "js",
+        };
+
+        // SCSS -> css/*.min.css
+        function styles() {
+          return src(paths.scss, { sourcemaps: true })
+            .pipe(sourcemaps.init())
+            .pipe(sass().on("error", sass.logError))
+            .pipe(postcss([autoprefixer(), cssnano()]))
+            .pipe(rename({ suffix: ".min" }))
+            .pipe(sourcemaps.write("."))
+            .pipe(dest(paths.cssOut))
+            .pipe(browserSync.stream());
+        }
+
+        // JS -> js/bundle.min.js
+        function scripts() {
+          return src([paths.js, "!js/**/*.min.js", "!js/**/bundle.min.js"])
+            .pipe(concat("bundle.min.js"))
+            .pipe(uglify())
+            .pipe(dest(paths.jsOut))
+            // JSはstream注入じゃなく「リロード」でOK（安定）
+            .on("end", browserSync.reload);
+        }
+
+        function serve() {
+          browserSync.init({
+            server: { baseDir: "./" }, // ← index.html がある場所
+            open: true,                // ← まずは確実に開く
+            notify: false,
+          });
+
+          watch(paths.scss, styles);
+
+          // 生成物 bundle.min.js を監視から除外（無限ループ防止）
+          watch(["js/**/*.js", "!js/**/bundle.min.js"], scripts);
+
+          watch(["**/*.html"]).on("change", browserSync.reload);
+        }
+
+        exports.default = series(parallel(styles, scripts), serve);
+
+
+gulp 起動
+npx gulp
+
+gulp を止める
+Ctrl + C
