@@ -1,0 +1,383 @@
+Cmd + Shift + P
+user settings json
+
+Auto Close Tag
+Code Spell Checker
+Container Tools
+Docker
+Error Lens
+EvilInspector
+GitHub Theme
+indent-rainbow
+Live Server
+Path Autocomplete
+PHP Class Generator
+PHP DocBlocker
+PHP Intelephense
+PHP Namespace Resolver
+Prettier - Code formatter
+vscode-icons
+zenkaku
+
+{
+  "editor.fontFamily": "Ricty Diminished",
+  // 自動保存を有効化する
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  // インデントを統一する
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  // 画面を見やすくする
+  // 1. 横スクロールバーを表示する
+  "editor.scrollbar.horizontal": "auto",
+  // 2. 行の折り返しを有効にする
+  "editor.wordWrap": "on",
+  // 3. 折り返しの計算をより厳密にする（「遊び」をなくす）
+  "editor.wrappingStrategy": "advanced",
+  "editor.fontSize": 14,
+  "emmet.variables": {
+    "lang": "ja",
+  },
+  "editor.renderWhitespace": "all",
+  // 保存時に自動整形する
+  "editor.formatOnSave": true,
+  "workbench.editor.wrapTabs": true,
+  "editor.smoothScrolling": true,
+  "editor.linkedEditing": true,
+  // ターミナルを見やすくする
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 今どのスコープにいるか分かりやすくする
+  "editor.stickyScroll.enabled": true,
+
+  // カーソルの点滅をふわっとさせる
+  "editor.cursorBlinking": "smooth",
+  // カーソルを滑らかに動かす
+  "editor.cursorSmoothCaretAnimation": "on",
+  // 括弧のペアを色分けして視認性を爆上げする
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  // 貼り付けたコードを自動で整える
+  "editor.formatOnPaste": true,
+  // PHPなどのコードを打っている最中にも整形を試みる
+  "editor.formatOnType": true,
+  // ファイルの末尾を必ず改行で終わらせる
+  "files.insertFinalNewline": true,
+  // 行末の不要なスペースを保存時に自動削除
+  "files.trimTrailingWhitespace": true,
+  // 末尾の余分な空行を自動で削れる
+  "files.trimFinalNewlines": true,
+  // ミニマップを表示にする
+  "editor.minimap.enabled": true,
+  //誤操作でファイルを移動してしまう事故を減らす
+  "explorer.confirmDragAndDrop": true,
+  // 削除事故の保険
+  "explorer.confirmDelete": true,
+
+  // 色を変える **************************************************
+  "workbench.colorCustomizations": {
+    // -----------------------------------------------
+    // エディタ本体
+    // -----------------------------------------------
+    // 背景色
+    // "editor.background": "#000000",
+    // 入力欄（検索窓など）にフォーカスが当たった時の外枠の色
+    "focusBorder": "#00aaff",
+
+    // -----------------------------------------------
+    // タイトルバー
+    // -----------------------------------------------
+    // 文字色
+    "titleBar.activeForeground": "#00aaff80",
+    // 背景色
+    "titleBar.activeBackground": "#00000000",
+    // 境界線
+    "titleBar.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // アクティビティバー
+    // -----------------------------------------------
+    // アイコンの色
+    "activityBar.inactiveForeground": "#00aaff80",
+    // ホバー時のアイコンの色
+    "activityBar.activeFocusBorder": "#00aaff",
+    // 選択されているアイコンの色
+    "activityBar.foreground": "#00aaff",
+    // 背景色
+    "activityBar.background": "#00112240",
+    // ホバー時の背景色
+    "activityBar.activeBackground": "#00aaff40",
+    // 左線の色
+    "activityBar.activeBorder": "#00aaff",
+    // 境界線
+    "activityBar.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // サイドバー
+    // -----------------------------------------------
+    // 文字色
+    "sideBar.foreground": "#00aaff80",
+    // 見出しの文字色
+    "sideBarSectionHeader.foreground": "#00aaff80",
+    // サイドバータイトル（エクスプローラーなど）の文字色
+    "sideBarTitle.foreground": "#00aaff80",
+    // 各セクションの見出し背景色
+    "sideBarSectionHeader.background": "#0b0b0ba0",
+    // スクロールした時に上部の背景色
+    "sideBarStickyScroll.background": "#0b0b0ba0",
+    // スクロールした時に上部の影
+    "sideBarStickyScroll.shadow": "#00000000",
+    // 境界線
+    "sideBar.border": "#00aaff80",
+    // サイドバー内を分ける横線
+    "sideBarSectionHeader.border": "#00aaff80",
+    // フォルダの階層を示す縦線
+    "tree.indentGuidesStroke": "#00aaff80",
+    // 選択していないフォルダの階層を示す縦線
+    "tree.inactiveIndentGuidesStroke": "#00aaff40",
+
+    // フォーカスが当たっている時の文字色
+    "list.focusForeground": "#00aaff",
+    // ホバー時の文字色
+    "list.hoverForeground": "#00aaff",
+    // エディターにカーソルがある時、選択中ファイルの文字色
+    "list.inactiveSelectionForeground": "#00aaff",
+    // クリックした時の文字色
+    "list.activeSelectionForeground": "#00aaff",
+    // ホバー時の背景色
+    "list.hoverBackground": "#00aaff40",
+    // エディターにカーソルがある時、選択中ファイルの背景色
+    "list.inactiveSelectionBackground": "#00aaff80",
+    // クリック時の背景色
+    "list.activeSelectionBackground": "#00aaff80",
+    // ファイルを掴んで別のフォルダの上に持っていった時のガイド色
+    "list.dropBackground": "#00aaff80",
+
+    // -----------------------------------------------
+    // エディタータブ
+    // -----------------------------------------------
+    // 文字色
+    "tab.inactiveForeground": "#00aaff80",
+    // ホバー時のタブの文字色
+    "tab.hoverForeground": "#00aaff",
+    // アクティブなタブの文字色
+    "tab.activeForeground": "#00aaff",
+    // アクティブなタブの上線色
+    "tab.activeBorderTop": "#00aaff",
+    // アクティブなタブの下線色
+    "tab.activeBorder": "#00aaff80",
+    // アイコンの色
+    "icon.foreground": "#00aaff80",
+    // 未保存のファイルがある時の丸の色
+    "editorCursor.foreground": "#00aaff",
+    "tab.activeModifiedBorder": "#00aaff",
+    "tab.inactiveModifiedBorder": "#00aaff40",
+    // 背景色
+    "tab.inactiveBackground": "#00000000",
+    // アクティブなタブの背景色
+    "tab.activeBackground": "#00aaff80",
+    // アイコンホバー時の背景色
+    "toolbar.hoverBackground": "#00aaff40",
+    // アイコンクリック時の背景
+    "toolbar.activeBackground": "#00aaff80",
+    // 非アクティブなタブの境界線
+    "tab.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // パンくずリスト
+    // -----------------------------------------------
+    // 文字色
+    "breadcrumb.foreground": "#00aaff80",
+    // ホバー時の文字色
+    "breadcrumb.focusForeground": "#00aaff",
+    // クリック時の文字色
+    "breadcrumb.activeSelectionForeground": "#00aaff",
+    // 背景色
+    "breadcrumb.background": "#00000000",
+    // 項目クリック時に出てくるリストの背景色
+    "breadcrumbPicker.background": "#001122e0",
+
+    // -----------------------------------------------
+    // エディター
+    // -----------------------------------------------
+    // 選択したテキストの背景色
+    "editor.selectionBackground": "#00aaff80",
+    // カーソルがある行の背景色
+    "editor.lineHighlightBackground": "#00aaff40",
+    // ドラッグ＆ドロップでファイルを動かす時の背景色
+    "editorGroup.dropBackground": "#00aaff80",
+    // スクロールした時に上部の背景色
+    "editorStickyScroll.background": "#0b0b0ba0",
+    // エディターをスクロールした時に上部に出る影
+    "editorStickyScroll.shadow": "#00000000",
+    // カーソルがある行の枠線色
+    "editor.lineHighlightBorder": "#00000000",
+    // エディター上部の境界線
+    "editorGroupHeader.tabsBorder": "#00aaff80",
+    // エディター分割時の境界線
+    "editorGroup.border": "#00aaff80",
+    // ミニマップとの境界線
+    "editorOverviewRuler.border": "#00aaff80",
+
+    // 検索ヒット箇所にカーソルが当たった時の文字色
+    "editor.findMatchForeground": "#00aaff",
+    // 検索結果の背景色
+    "editor.findMatchBackground": "#00aaff40",
+    // 検索ヒット箇所の背景色
+    "editor.findMatchHighlightBackground": "#00aaff40",
+    // 検索ヒット箇所にカーソルが当たった時の背景色
+    "editor.findRangeHighlightBackground": "#00aaff80",
+
+    // -----------------------------------------------
+    // 入力画面（コマンドパレット）
+    // -----------------------------------------------
+    // 文字色
+    "quickInput.foreground": "#dddddda0",
+    // 入力した文字と一致する部分を強調する色
+    "list.highlightForeground": "#00aaff",
+    // グループの見出し文字色
+    "pickerGroup.foreground": "#00aaff",
+    // 背景
+    "quickInput.background": "#0b0b0b",
+    // ホバー時の背景色
+    "quickInputList.focusBackground": "#00aaff40",
+    // グループの区切り線の色
+    "pickerGroup.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // 検索窓
+    // -----------------------------------------------
+    // 文字色
+    "editorWidget.foreground": "#00aaff80",
+    // 入力ボックスの文字色
+    "input.foreground": "#dddddd",
+    // 入力ボックスのプレースホルダーの文字色
+    "input.placeholderForeground": "#dddddd60",
+    // オプションボタンのクリック時の色
+    "inputOption.activeForeground": "#00aaff",
+    // 背景色
+    "editorWidget.background": "#0b0b0b",
+    // 入力ボックスの背景色
+    "input.background": "#404040",
+    // オプションボタンのホバー時の背景色
+    "inputOption.hoverBackground": "#00aaff40",
+    // オプションボタンのクリック時の背景色
+    "inputOption.activeBackground": "#00aaff80",
+    // 枠線色
+    "editorWidget.border": "#00aaff80",
+    // 入力ボックスの枠線色
+    "input.border": "#00aaff80",
+    // オプションボタンのクリック時の枠線色
+    "inputOption.activeBorder": "#00aaff",
+
+    // -----------------------------------------------
+    // 説明文
+    // -----------------------------------------------
+    // 文字色
+    "editorHoverWidget.foreground": "#00aaff",
+    // 背景色
+    "editorHoverWidget.background": "#0b0b0b",
+    // 枠線色
+    "editorHoverWidget.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // エラーや警告の波線の色
+    // -----------------------------------------------
+    // エラー（赤色系が一般的）
+    "editorError.foreground": "#ff00bfa0",
+    // 警告（黄色系が一般的）
+    "editorWarning.foreground": "#ffd900a0",
+    // 情報（青色系が一般的）
+    "editorInfo.foreground": "#00aaff",
+
+    // -----------------------------------------------
+    // 問題パネル（Command + Shift + M）の設定
+    // -----------------------------------------------
+    // エラー項目の文字色
+    "problemsErrorIcon.foreground": "#ff00bfa0",
+    // 警告項目の文字色
+    "problemsWarningIcon.foreground": "#ffd900a0",
+    // 情報項目の文字色
+    "problemsInfoIcon.foreground": "#00aaff",
+
+    // -----------------------------------------------
+    // 行番号
+    // -----------------------------------------------
+    // 文字色
+    "editorLineNumber.foreground": "#00aaff80",
+    // 背景色
+    "editorGutter.background": "#00000000",
+    // カーソルがある行番号の文字色
+    "editorLineNumber.activeForeground": "#00aaff",
+
+    // -----------------------------------------------
+    // ミニマップ
+    // -----------------------------------------------
+    // 背景色
+    "minimap.background": "#00000000",
+    // 今表示している範囲の背景色
+    "minimap.selectionHighlight": "#00aaff80",
+    // スライダー背景色
+    "minimapSlider.background": "#00aaff40",
+    // ホバー時のスライダー背景色
+    "minimapSlider.hoverBackground": "#00aaff80",
+    // クリック時のスライダー背景色
+    "minimapSlider.activeBackground": "#00aaff80",
+
+    // -----------------------------------------------
+    // スクロールバー
+    // -----------------------------------------------
+    // バーの色
+    "scrollbarSlider.background": "#00aaff40",
+    // ホバー時のバーの色
+    "scrollbarSlider.hoverBackground": "#00aaff80",
+    // クリック時のバーの色
+    "scrollbarSlider.activeBackground": "#00aaff80",
+    // 影
+    "scrollbar.shadow": "#00000000",
+
+    // -----------------------------------------------
+    // ターミナル
+    // -----------------------------------------------
+    // タブの文字色
+    "panelTitle.inactiveForeground": "#00aaff80",
+    //アクティブなタブのタブの文字色
+    "panelTitle.activeForeground": "#00aaff",
+    // ターミナルの文字色
+    "terminal.foreground": "#dddddd",
+    // ターミナルのカーソルの色
+    "terminalCursor.foreground": "#00aaff",
+    // アクティブなタブのタブの下線色
+    "panelTitle.activeBorder": "#00aaff",
+    // ターミナル内の選択範囲の背景色
+    "terminal.selectionBackground": "#00aaff80",
+    // 境界線
+    "panel.border": "#00aaff80",
+
+    // -----------------------------------------------
+    // ステータスバー
+    // -----------------------------------------------
+    // 文字色
+    "statusBar.foreground": "#00aaff80",
+    // 背景色
+    "statusBar.background": "#00000000",
+    // ホバーした時の背景色
+    "statusBarItem.hoverBackground": "#00aaff40",
+    // クリックした時の背景色
+    "statusBarItem.activeBackground": "#00aaff80",
+    // 境界線
+    "statusBar.border": "#00aaff80",
+
+    // リモート接続（Docker内での作業など）をしている時の左端の色
+    "statusBarItem.remoteForeground": "#dddddd",
+    "statusBarItem.remoteBackground": "#00aaff80",
+    // エラーの通知色
+    "statusBarItem.errorBackground": "#ff00bfa0",
+    // 警告色
+    "statusBarItem.warningBackground": "#ffd900a0",
+  },
+  "background.enabled": true,
+  "workbench.startupEditor": "none",
+}
